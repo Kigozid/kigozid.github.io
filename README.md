@@ -26,3 +26,77 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-
+<div class="container mt-5">
+  <h2>Select a Market</h2>
+  <div class="btn-group mt-3" role="group">
+    <button type="button" class="btn btn-secondary" id="currency-pairs-btn">Currency Pairs</button>
+    <button type="button" class="btn btn-secondary" id="indices-btn">Indices</button>
+  </div>
+  <div class="mt-5" id="market-container">
+    <!-- This container will be populated with the selected market's data -->
+  </div>
+</div>
+
+<script>
+  // Function to display the currency pairs
+  function displayCurrencyPairs() {
+    const marketContainer = document.getElementById('market-container');
+    marketContainer.innerHTML = `
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Currency Pair</th>
+            <th>Bid</th>
+            <th>Ask</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EUR/USD</td>
+            <td>1.20</td>
+            <td>1.21</td>
+          </tr>
+          <tr>
+            <td>GBP/USD</td>
+            <td>1.30</td>
+            <td>1.31</td>
+          </tr>
+          <!-- Add more currency pairs as needed -->
+        </tbody>
+      </table>
+    `;
+  }
+
+  // Function to display the indices
+  function displayIndices() {
+    const marketContainer = document.getElementById('market-container');
+    marketContainer.innerHTML = `
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dow Jones</td>
+            <td>30,000</td>
+          </tr>
+          <tr>
+            <td>S&P 500</td>
+            <td>3,500</td>
+          </tr>
+          <!-- Add more indices as needed -->
+        </tbody>
+      </table>
+    `;
+  }
+
+  // Event listeners for the buttons
+  const currencyPairsBtn = document.getElementById('currency-pairs-btn');
+  currencyPairsBtn.addEventListener('click', displayCurrencyPairs);
+
+  const indicesBtn = document.getElementById('indices-btn');
+  indicesBtn.addEventListener('click', displayIndices);
+</script>
